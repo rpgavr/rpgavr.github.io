@@ -25,10 +25,23 @@
      .anuncio{float: center; background-color: none; width:750px; margin:0 auto; text-align:left; border:12px black;}
      .botao{float: left;}
      .mobile{float: center}
-     .cf{float: center;border-radius: 10px;}
     .menu{text-align: center;}
     .som{text-align: right;}
- div.dice{
+html, body
+{
+    height: 100%;
+}
+#Header
+{
+    width: 960px;
+    height: 150px;
+}
+#Content
+{
+    height: 100%;
+    width: 960px;
+}
+    div.dice{
 	float:left;
 	width:24px;
 	background:#FFFAFA;
@@ -50,7 +63,8 @@ function rollDice(){
 </script>
 </head>
     <body> 
-<div class="cabeca"> <header id=“topo”>    <h2><strong><img  src="logoavr666.png" alt="RPG AVR"></strong> </h2>  
+ <div id="Header">
+<header id=“topo”>    <h2><strong><img  src="logoavr666.png" alt="RPG AVR"></strong> </h2>  
  <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     EXTRAS
@@ -59,24 +73,27 @@ function rollDice(){
     <a class="dropdown-item" href="sumário.html">SUMÁRIO</a>
   </div>
 </div>
-</header>
-         </div> 
+</header> 
 
+</div>
+</div> 
+ <div id="Content">
   <br>                                               
   <div class="texto">  <h3> <strong>RPG AVR: CLASSIC FANTASY</strong></h3></div>
   <br>
     <div class="cf">  <img  src="cf666.png" alt="RPG."> </div>
   <br><br>  
-    <asside><h4> <strong></strong></h4>
+    <asside>
     <p><strong>Classic Fantasy é um cenário do RPG Ação V Reação, criado para ambientar suas aventuras de fantasia medieval com elfos, anões e humanos como protagonistas. 
-Este livro contém 3 raças, 16 tipos de classes, 99 habilidades, regras para criar criaturas, itens e habilidades para sua campanha e é totalmente compatível com o cenário As Ilhas Soturnas.</strong></p></asside>
+Este livro contém 3 raças, 16 tipos de classes, 99 habilidades, regras para criar criaturas, itens e habilidades para sua campanha e é totalmente compatível com o cenário As Ilhas Soturnas.
+    </strong></p></asside>
    <br>
       <div class="menu"> <a href="sumário.html"><button type="button" class="btn btn-danger">Sumário 🔍</button>
 </a> </div>
  <br>     
 </div><br>
 <br>
-
+</div>
 <div class="footer">
 <address> <div class= "rodape"><strong>Ação V Reação</strong></div></address>® 2021</div></footer></div>
 
