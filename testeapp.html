@@ -51,29 +51,23 @@ function rollDice(){
 </head>
     <body> 
 <div class="cabeca"> <header id=“topo”>    <h2><strong><img  src="logoavr666.png" alt="RPG AVR"></strong> </h2>  
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
-<div id="die1" class="dice">0</div>
-<button type="button" class="btn btn-danger" onclick="rollDice()">🎲</button>
-
-<button type="button" class="btn btn-link" onclick="document.getElementById('player').play()">▶️</button>
-	  <button type="button" class="btn btn-link" onclick="document.getElementById('player').pause()">⏸</button>
-
-	<audio id="player" autoplay="autoplay" loop>
-	  <source src="avrtema.mp3" type="audio/mp3" />
-	</audio>
-<h2 id="status" style="clear:left;"></h2></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
+ <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="sumário.html">Sumário <span class="sr-only">(Página atual)</span></a>
-      <a class="nav-item nav-link" href="https://www.facebook.com/RPGAVR/">Facebook</a>
-      <a class="nav-item nav-link" href="https://www.youtube.com/playlist?list=PL7i-9wvYK5ekZiyavjnnqpW13-zO0jwMK">Youtube</a>
- </div>
+  <div class="dropdown-menu" aria-labelledby="EXTRAS">
+    <a class="dropdown-item" href="sumário.html">SUMÁRIO</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
   </div>
-</nav>
+</div><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="sumário.html">SUMÁRIO</a>
+  </div>
+</div>
 </header>
          </div> 
 
