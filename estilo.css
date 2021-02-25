@@ -25,29 +25,3 @@
 }
 <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-
-/* Styles for wrapping the search box */
-
-.main {
-    width: 50%;
-    margin: 50px auto;
-}
-
-/* Bootstrap 4 text input with search icon */
-
-.has-search .form-control {
-    padding-left: 2.375rem;
-}
-
-.has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-}
