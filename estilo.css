@@ -1,40 +1,64 @@
-@charset "UTF-8";
-  body{ background-image: URL(../fundoavr666.png);}
-      @media only screen and (min-width: 1000px){
-      .mobile { display: none; }
-      }
-     h2 {text-align: center; color: #C0C0C0; font-size: 22pt; font-family: "Arial, Times New Roman", Century, "Book Antiqua";}
-     p {text-align: left; color: black; font-size: 30pt; font-family: "Arial", Century, "Book Antiqua";}
-     .cabeca {background-color: #FFDEAD;text-align:center;}
-     h3{text-align: center; color: black; font-size: 32pt; font-family: "Arial", Century, "Book Antiqua";}
-     .footer{text-align: center; font-size: 15pt; color: black;}
-     .anuncio{float: center; background-color: none; width:750px; margin:0 auto; text-align:left; border:12px black;}
-     .botao{float: left;}
-    .regra{text-align: center; text-align: left; color: black; font-size: 20pt; font-family: "Arial", Century, "Book Antiqua";}
-     .mobile{float: center;}
-     .cf{text-align: center; border-radius: 10px;}
-    .menu{text-align: center;}
-    .menub{text-align: center;
-   width:66px;
-	background:#F5F5F5;
-	border:#999 1px solid;
-	padding:10px;
-	font-size:66px;
-	text-align:center;
-	margin:5px;
-  border-radius: 66px;}
-    .som{text-align: right;}
- .texto {background-color: none; width:750px; margin:0 auto; text-align:left; border:12px black;}
-<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-div.dice{
-	float:left;
-	width:66px;
-	background:#F5F5F5;
-	border:#999 1px solid;
-	padding:10px;
-	font-size:66px;
-	text-align:center;
-	margin:5px;
-  border-radius: 66px;}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RPG AVR</title>
+        <meta charset="UTF-8">        
+        <meta name="description" content="RPG AVR, site oficial do sistema de  Roleplaying game Ação V Reação.">
+        <meta name="keywords" content="Conteúdo de RPG">
+        <meta name="author" content="Wilson Costa">
+        <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+        <link href="bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="bootstrap.min.js"></script>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="estilo.css">
+<script>
+function rollDice(){
+    var die1 = document.getElementById("die1");
+    var status = document.getElementById("status");
+    var d1 = Math.floor(Math.random() * 6) + 1;
+    die1.innerHTML = d1;
+    status.innerHTML = " "+" ";
 }
+</script>
+</head>
+    <body> 
+<div class="cabeca"> <header id=“topo”>    <h2><strong><img  src="logoavr666.png" alt="RPG AVR"></strong> </h2>  
+<br>
+  <div class="texto">  <h3> <strong>Mesa de jogo</strong> 
+</h3><br></div>
+        <div class="menu"><h4> <strong></strong></h4>
+<button type="button" class="btn btn-secondary" onclick="document.getElementById('player').play()">Tocar</button>
+	  <button type="button" class="btn btn-secondary" onclick="document.getElementById('player').pause()">Pausar</button>
+</div>
+	<audio id="player" autoplay="autoplay" loop>
+	  <source src="avrtema.mp3" type="audio/mp3" />
+	</audio> </div>
+</header>
+         </div>
+ <br><div class="menub">
+<div id="die1" class="dice">0</div>
+<button type="button" class="btn btn-secondary"
+onclick="rollDice()">d6</button></div>
+<h2 id="status" style="clear:left;"></h2>
+ <br>
+         <br>                                               
+<div class="menu">  <img  src="classicfantasy1.png" alt="RPG."> </div>
+ <br><br>  <div class="texto">
+<asside><h4> <strong></strong></h4>
+<p><strong>REGRA BÁSICA<br>
+O Dado d6: <br>
+1 - 3 Falha<br>
+4 - 6 Acerto <br>
+ACERTO CRÍTICO (6) <br>                          Ação: acerta a ação e anula a reação oposta. <br>
+Reação: acerta a reação e ganha uma ação mediata, tirando seis (6) no dado ganha 1 XP. 
+<br>
+FALHA CRÍTICA (1)<br>
+Ação: falha na ação e perde sua próxima reação. <br>
+Reação: falha na reação e perde sua próxima ação. </strong></p></asside>
+<br></div>
+           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>
