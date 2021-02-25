@@ -10,6 +10,7 @@
      .footer{text-align: center; font-size: 15pt; color: black;}
      .anuncio{float: center; background-color: none; width:750px; margin:0 auto; text-align:left; border:12px black;}
      .botao{float: left;}
+    .regra{text-align: center; text-align: left; color: black; font-size: 20pt; font-family: "Arial", Century, "Book Antiqua";}
      .mobile{float: center;}
      .cf{text-align: center; border-radius: 10px;}
     .menu{text-align: center;}
@@ -17,10 +18,10 @@
  .texto {background-color: none; width:750px; margin:0 auto; text-align:left; border:12px black;}
  div.dice{
 	float:left;
-	width:24px;
-	background:#FFFAFA;
+	width:50px;
+	background: white;
 	padding:10px;
-	font-size:25px;
+	font-size:45px;
 	margin:2px;
 }
 <!-- Bootstrap CSS -->
