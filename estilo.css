@@ -16,13 +16,28 @@
     .menu{text-align: center;}
     .som{text-align: right;}
  .texto {background-color: none; width:750px; margin:0 auto; text-align:left; border:12px black;}
- div.dice{
-	float:center;
-	width:10px;  
-	background: #FFDEAD;
-	padding:10px;
-	font-size:66px;
-	margin:5px;
+ * {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+button {
+  background-color: rgb(82, 186, 179);
+  border-radius: 6px;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-transform: uppercase;
+  width: 200px;
+  cursor: pointer;
+}
+#placeholder {
+  height: 100px;
+  width: 100px;
+  padding: 50px;
+  margin: 50px auto;
+  border: 1px solid gray;
+  border-radius: 10px;  
+  font-size:80px;
 }
 <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
