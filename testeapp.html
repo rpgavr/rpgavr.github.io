@@ -23,30 +23,30 @@ function rollDice(){
 </head>
     <body> 
 <div class="cabeca"> <header id=“topo”>    <h2><strong><img  src="logoavr666.png" alt="RPG AVR"></strong> </h2>  
-<br>       
-</header>
-         </div> 
-         <br>                                               
-  <div class="texto">  <h3> <strong>MESA DE JOGO</strong> 
-</h3>
 <br>
-<div class="menu"><h4> <strong></strong></h4>
+        <div class="menu"><h4> <strong></strong></h4>
 <button type="button" class="btn btn-secondary" onclick="document.getElementById('player').play()">Tocar</button>
 	  <button type="button" class="btn btn-secondary" onclick="document.getElementById('player').pause()">Pausar</button>
 </div>
 	<audio id="player" autoplay="autoplay" loop>
 	  <source src="avrtema.mp3" type="audio/mp3" />
 	</audio> </div>
-<br><br>
-<div id="die1" class="dice">0</div>
-<button type="button" class="btn btn-danger"
- onclick="rollDice()">d6</button></div>
+</header>
+         </div> 
+         <br>                                               
+  <div class="texto">  <h3> <strong>RPG AVR: CLASSIC FANTASY</strong> 
+</h3>
 <br>
-  <br>
+<div class="find-in-document-container">
+  <input type="text" id="txt-to-find" value="" oninput="findInDocument({position: 0})"/>
+  <input type="button" value="Prev" onclick="findInDocument({position: -1})"/>
+  <input type="button" value="Next" onclick="findInDocument({position: 1})"/>
+</div>
 <br>
-<div class="regra">
-<p><strong><asside>
-REGRA BÁSICA<br>
+<div class="cf">  <img  src="cf666.png" alt="RPG."> </div>
+ <br><br>  
+<asside><h4> <strong></strong></h4>
+<p><strong>REGRA BÁSICA<br>
 O Dado d6: <br>
 1 - 3 Falha<br>
 4 - 6 Acerto <br>
@@ -55,9 +55,13 @@ Reação: acerta a reação e ganha uma ação mediata, tirando seis (6) no dado
 <br>
 FALHA CRÍTICA (1)<br>
 Ação: falha na ação e perde sua próxima reação. <br>
-Reação: falha na reação e perde sua próxima ação. </strong></asside></p></div>
+Reação: falha na reação e perde sua próxima ação. </strong></p></asside>
+<br></div>
+  <br>
+<br>
            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>
