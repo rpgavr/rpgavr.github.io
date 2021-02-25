@@ -12,13 +12,29 @@
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="estilo.css">
 <script>
-function rollDice(){
-    var die1 = document.getElementById("die1");
-    var status = document.getElementById("status");
-    var d1 = Math.floor(Math.random() * 6) + 1;
-    die1.innerHTML = d1;
-    status.innerHTML = " "+" ";
+  <script src="dice.js"></script>
+  <script src="ui.js"></script>
+var dice = {
+  sides: 6,
+  roll: function () {
+    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
 }
+
+
+
+//Prints dice roll to the page
+
+function printNumber(number) {
+  var placeholder = document.getElementById('placeholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('button');
+
+button.onclick = function() {
+  var result =
 </script>
 </head>
     <body> 
@@ -33,10 +49,10 @@ function rollDice(){
 	<audio id="player" autoplay="autoplay" loop>
 	  <source src="avrtema.mp3" type="audio/mp3" />
 	</audio> </div>
-<div class="menu">
-<div id="die1" class="dice">0</div>
-<button type="button" class="btn btn-link"onclick="rollDice()">d6</button>
-<h2 id="status" style="clear:center;"></h2></div>
+<p id="placeholder">
+  
+  </p>
+  <button id="button">Roll Dice</button>
 </header>
          </div> 
          <br>                                               
