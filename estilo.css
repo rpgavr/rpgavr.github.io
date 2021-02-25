@@ -14,6 +14,15 @@
      .mobile{float: center;}
      .cf{text-align: center; border-radius: 10px;}
     .menu{text-align: center;}
+    .menub{text-align: center;
+   width:66px;
+	background:#F5F5F5;
+	border:#999 1px solid;
+	padding:10px;
+	font-size:66px;
+	text-align:center;
+	margin:5px;
+  border-radius: 66px;}
     .som{text-align: right;}
  .texto {background-color: none; width:750px; margin:0 auto; text-align:left; border:12px black;}
 <!-- Bootstrap CSS -->
