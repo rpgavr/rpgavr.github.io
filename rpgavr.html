@@ -19,6 +19,53 @@ function rollDice(){
     die1.innerHTML = d1;
     status.innerHTML = " "+" ";
 }
+$(function() {
+
+  var $input = $("input[type='search']"),
+    $clearBtn = $("button[data-search='clear']"),
+    $prevBtn = $("button[data-search='prev']"),
+    $nextBtn = $("button[data-search='next']"),
+    $content = $(".content"),
+    $results,
+    currentClass = "current",
+    offsetTop = 50,
+    currentIndex = 0;
+
+  /**
+   * Saltar para o elemento correspondente ao currentIndex
+   */
+  function jumpTo() {
+    if ($results.length) {
+      var position,
+        $current = $results.eq(currentIndex);
+      $results.removeClass(currentClass);
+      if ($current.length) {
+        $current.addClass(currentClass);
+        position = $current.offset().top - offsetTop;
+        window.scrollTo(0, position);
+      }
+    }
+  }
+
+  /**
+   * Procurar a palavra-chave inserida no
+   * contexto especificado na entrada
+   */
+  $input.on("input", function() {
+  	var searchVal = this.value;
+    $content.unmark({
+      done: function() {
+        $content.mark(searchVal, {
+          separateWordSearch: true,
+          done: function() {
+            $results = $content.find("mark");
+            currentIndex = 0;
+            jumpTo();
+          }
+        });
+      }
+    });
+  });
 </script>
 </head>
     <body> 
@@ -30,6 +77,13 @@ function rollDice(){
          <br>                                               
   <div class="texto">  <h3> <strong>RPG AVR: FANTASIA CLÁSSICA</strong> 
 </h3>
+<div class="header">
+  Pesquisa:
+  <input type="search" placeholder="arquitetura">
+  <button data-search="next">&darr;</button>
+  <button data-search="prev">&uarr;</button>
+  <button data-search="clear">✖</button>
+</div>
 <br>
 <br>
 <h4> <strong></strong></h4>
@@ -318,6 +372,9 @@ Especial: Cria ação ou reação específica.
 <br></div>
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+</script>
 </body>
 </html>
