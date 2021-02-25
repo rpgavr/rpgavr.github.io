@@ -29,3 +29,28 @@ div.dice{
 	margin:5px;
   border-radius: 66px;}
 }
+
+
+.hp {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+button {
+    background-color: springgreen;
+    outline: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 40px;
+    widows: 350px;
+    ;
+    border: none;
+}
+
+.res {
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
