@@ -17,10 +17,10 @@
     .som{text-align: right;}
  .texto {background-color: none; width:750px; margin:0 auto; text-align:left; border:12px black;}
  div.dice{
-	float:left;
+	float:center;
 	width:30px;
-	background: white;
-	padding:10px;
+	background: #FFDEAD;
+	padding:30px;
 	font-size:25px;
 	margin:2px;
 }
