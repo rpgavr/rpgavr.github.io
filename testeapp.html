@@ -11,14 +11,9 @@
         <script type="text/javascript" src="bootstrap.min.js"></script>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="estilo.css">
+
 <script>
-var dice = {
-  sides: 6,
-  roll: function () {
-    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-    return randomNumber;
-  }
-}
+function printNumber(number) {
   var placeholder = document.getElementById('placeholder');
   placeholder.innerHTML = number;
 }
@@ -29,6 +24,7 @@ button.onclick = function() {
   var result = dice.roll();
   printNumber(result);
 };
+
 
 </script>
 </head>
@@ -45,7 +41,13 @@ button.onclick = function() {
 	  <source src="avrtema.mp3" type="audio/mp3" />
 	</audio> </div>
 <p id="placeholder">
-function printNumber(number) {
+function printNumber(number) {var dice = {
+  sides: 6,
+  roll: function () {
+    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
   </p>
   <button id="button">Roll Dice</button>
 
