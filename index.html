@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>RPG AVR</title>
@@ -11,35 +10,7 @@
         <link href="bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript" src="bootstrap.min.js"></script>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    </head> 
-     <style>
- body{ background-image: URL(../fundoavr666.png);}
-      @media only screen and (min-width: 1000px){
-        .mobile { display: none; }
-      }
-     h2 {text-align: center; color: #C0C0C0; font-size: 25pt; font-family: "Arial, Times New Roman", Century, "Book Antiqua";}
-   .texto {background-color: none; width:750px; margin:0 auto; text-align:left; border:12px black;}
-     p {text-align: center; color: black; font-size: 23pt; font-family: "Arial", Century, "Book Antiqua";}
-.cabeca {background-color: #F8F8FF;text-align:center;}
-h3{text-align: center; color: black; font-size: 22pt; font-family: "Arial", Century, "Book Antiqua";}
-  .footer{text-align: center; font-size: 15pt; color: black;}
-.anuncio{float: center; background-color: none; width:750px; margin:0 auto; text-align:left; border:12px black;}
- .botao{float: left;}
-         .mobile{float: center}
-.cf{float: center;border-radius: 10px;}
-.menu{text-align: center;}
-.som{text-align: right;}
-div.dice{
-	float:left;
-	width:24px;
-	background:#FFFAFA;
-	padding:10px;
-	font-size:12px;
-	margin:2px;
-}
-<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-</style>
+<link rel="stylesheet" type="text/css" href="estilo.css">
 <script>
 function rollDice(){
     var die1 = document.getElementById("die1");
@@ -52,30 +23,16 @@ function rollDice(){
 </head>
     <body> 
 <div class="cabeca"> <header id=“topo”>    <h2><strong><img  src="logoavr666.png" alt="RPG AVR"></strong> </h2>  
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-
-<div id="die1" class="dice">0</div>
-<button type="button" class="btn btn-danger" onclick="rollDice()">🎲</button>
-
-<button type="button" class="btn btn-link" onclick="document.getElementById('player').play()">▶️</button>
-	  <button type="button" class="btn btn-link" onclick="document.getElementById('player').pause()">⏸</button>
-
-	<audio id="player" autoplay="autoplay" loop>
-	  <source src="avrtema.mp3" type="audio/mp3" />
-	</audio>
-<h2 id="status" style="clear:left;"></h2></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
+<br>
+        <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   LIVRO & FICHAS
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="sumário.html">Sumário <span class="sr-only">(Página atual)</span></a>
-      <a class="nav-item nav-link" href="https://www.facebook.com/RPGAVR/">Facebook</a>
-      <a class="nav-item nav-link" href="https://www.youtube.com/playlist?list=PL7i-9wvYK5ekZiyavjnnqpW13-zO0jwMK">Youtube</a>
- </div>
+  <div class="dropdown-menu" aria-labelledby="EXTRAS">
+    <a class="dropdown-item" href="rpgavr.html">LIVRO</a>
+ <a class="dropdown-item" href="Ficha RPG AVR (editável)">FICHA EDITÁVEL</a>
+<a class="dropdown-item" href="ficha_para_imprimir">FICHA IMPRIMIR</a>
   </div>
-</nav>
 </header>
          </div> 
          <br>                                               
@@ -86,26 +43,10 @@ function rollDice(){
  <br><br>  
 <asside><h4> <strong></strong></h4>
 <p><strong>Classic Fantasy é um cenário do RPG Ação V Reação, criado para ambientar suas aventuras de fantasia medieval com elfos, anões e humanos como protagonistas. 
-Este livro contém 3 raças, 16 tipos de classes, 99 habilidades, regras para criar criaturas, itens e habilidades para sua campanha e é totalmente compatível com o cenário As Ilhas Soturnas.</strong></p>
-</p></asside>
+Este livro contém 3 raças, 16 tipos de classes, 99 habilidades, regras para criar criaturas, itens e habilidades para sua campanha e é totalmente compatível com o cenário As Ilhas Soturnas.</strong></p></asside>
+<br></div>
+  <br>
 <br>
-      <div class="menu"> <a href="sumário.html"><button type="button" class="btn btn-danger">Sumário 🔍</button>
-</a> </div>
- <br>     
-</div>
-</div><br>
-<br>
-<div class="footer">
-<address> <div class= "rodape"><strong>rpgacaovreacao@gmail.com</strong></div></address>® 2020</div></footer></div>
-<div class="botao">
-<a href="página22.html" rel="noopener noreferrer"><button type="button" class="btn btn-link">⬅️</button>
-<a href="página2.html" rel="noopener noreferrer"><button type="button" class="btn btn-link">➡️</button></div>
-</a>
-<br><br>
-<div class="anuncio">
-<a href="https://produto.mercadolivre.com.br/MLB-1711825102-rpg-aco-v-reaco-as-ilhas-soturnas-_JM">
-<img  src="anuncio.png" alt="anuncio do livro."></a> </div>
-<br><br>
            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
