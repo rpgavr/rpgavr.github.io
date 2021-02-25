@@ -19,55 +19,6 @@ function rollDice(){
     die1.innerHTML = d1;
     status.innerHTML = " "+" ";
 }
-
-$(function() {
-
-  var $input = $("input[type='search']"),
-    $clearBtn = $("button[data-search='clear']"),
-    $prevBtn = $("button[data-search='prev']"),
-    $nextBtn = $("button[data-search='next']"),
-    $content = $(".content"),
-    $results,
-    currentClass = "current",
-    offsetTop = 50,
-    currentIndex = 0;
-
-  /**
-   * Saltar para o elemento correspondente ao currentIndex
-   */
-  function jumpTo() {
-    if ($results.length) {
-      var position,
-        $current = $results.eq(currentIndex);
-      $results.removeClass(currentClass);
-      if ($current.length) {
-        $current.addClass(currentClass);
-        position = $current.offset().top - offsetTop;
-        window.scrollTo(0, position);
-      }
-    }
-  }
-
-  /**
-   * Procurar a palavra-chave inserida no
-   * contexto especificado na entrada
-   */
-  $input.on("input", function() {
-  	var searchVal = this.value;
-    $content.unmark({
-      done: function() {
-        $content.mark(searchVal, {
-          separateWordSearch: true,
-          done: function() {
-            $results = $content.find("mark");
-            currentIndex = 0;
-            jumpTo();
-          }
-        });
-      }
-    });
-  });
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
 </script>
 </head>
     <body> 
@@ -79,11 +30,6 @@ $(function() {
          <br>                                               
   <div class="texto">  <h3> <strong>RPG AVR: FANTASIA CLÁSSICA</strong> 
 </h3>
-<div class="header">
-  <input type="search" placeholder="Pesquisar no livro">
-  <button data-search="next">IR</button>
-  <button data-search="clear">✖</button>
-</div>
 <br>
 <br>
 <h4> <strong></strong></h4>
