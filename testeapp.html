@@ -19,6 +19,16 @@ var dice = {
     return randomNumber;
   }
 }
+  var placeholder = document.getElementById('placeholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('button');
+
+button.onclick = function() {
+  var result = dice.roll();
+  printNumber(result);
+};
 
 </script>
 </head>
@@ -36,16 +46,6 @@ var dice = {
 	</audio> </div>
 <p id="placeholder">
 function printNumber(number) {
-  var placeholder = document.getElementById('placeholder');
-  placeholder.innerHTML = number;
-}
-
-var button = document.getElementById('button');
-
-button.onclick = function() {
-  var result = dice.roll();
-  printNumber(result);
-};
   </p>
   <button id="button">Roll Dice</button>
 
