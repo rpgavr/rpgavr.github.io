@@ -11,6 +11,16 @@
         <script type="text/javascript" src="bootstrap.min.js"></script>
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="estilo.css">
+<script>
+function rollDice(){
+    var die1 = document.getElementById("die1");
+    var status = document.getElementById("status");
+    var d1 = Math.floor(Math.random() * 6) + 1;
+    die1.innerHTML = d1;
+    status.innerHTML = "You rolled "+".";
+    }
+}
+</script>
 </head>
     <body> 
 <div class="cabeca"> <header id=“topo”>    <h2><strong><img  src="logoavr666.png" alt="RPG AVR"></strong> </h2>  
@@ -27,7 +37,10 @@
   </p>
 </header>
          </div> 
-         <br>                                               
+         <br>  
+  <div id="die1" class="dice">0</div>
+<button onclick="rollDice()">ROLAR d6</button>
+<h2 id="status" style="clear:left;"></h2>                                         
 <div class="menu">  <img  src="classicfantasy1.png" alt="RPG."> </div>
  <br>  <div class="texto">
 <asside><p><strong>REGRA BÁSICA<br>
