@@ -14,26 +14,6 @@
 <script>
   <script src="dice.js"></script>
   <script src="ui.js"></script>
-
-var dice = {
-  sides: 6,
-  roll: function () {
-    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-    return randomNumber;
-  }
-}
-<script>
-//Prints dice roll to the page
-
-function printNumber(number) {
-  var placeholder = document.getElementById('placeholder');
-  placeholder.innerHTML = number;
-}
-
-var button = document.getElementById('button');
-
-button.onclick = function() {
-  var result =
 </script>
 </head>
     <body> 
@@ -49,6 +29,24 @@ button.onclick = function() {
 	  <source src="avrtema.mp3" type="audio/mp3" />
 	</audio> </div>
 <p id="placeholder">
+var dice = {
+  sides: 6,
+  roll: function () {
+    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
+//Prints dice roll to the page
+
+function printNumber(number) {
+  var placeholder = document.getElementById('placeholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('button');
+
+button.onclick = function() {
+  var result =
   
   </p>
   <button id="button">Roll Dice</button>
