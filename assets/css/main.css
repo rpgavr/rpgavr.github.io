@@ -3353,30 +3353,30 @@ left: 20%;
   font-family: 'fontawesome';
 }
 .container .cube .front{
-  background: #000;
+  background: #ff0000;
   transform: translateZ(100px);
 }
 .container .cube .back{
-  background: #000;
+  background: #ff0000;
   transform: translateZ(-100px) rotateY(180deg);
 }
 .container .cube .right{
-  background: #000;
+  background: #ff0000;
   transform-origin: top right;
   transform: rotateY(-270deg) translateX(100px);
 }
 .container .cube .left{
-  background: #000;
+  background: #ff0000;
   transform-origin: center left;
   transform: rotateY(270deg) translateX(-100px);
 }
 .container .cube .top{
-  background: #000;
+  background: #ff0000;
   transform-origin: top center;
   transform: rotateX(-270deg) translateY(-100px);
 }
 .container .cube .bottom{
-  background: #000;
+  background: #ff0000;
   transform-origin: bottom center;
   transform: rotateX(270deg) translateY(100px);
 }
