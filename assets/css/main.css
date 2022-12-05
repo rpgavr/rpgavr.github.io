@@ -3331,13 +3331,12 @@ position: center;
 }
 .container .cube{
   position: relative;
-  left: 45%;
   top: 40%;
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   transform-style: preserve-3d;
   cursor: pointer;
-  transform: rotateX(130deg) rotateY(-212deg) rotateZ(-83deg);
+  transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
 }
 .container .cube div{
   position: absolute;
