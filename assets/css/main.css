@@ -3327,9 +3327,10 @@ body{
   perspective-origin: 50% 50%;
   font-family: 'fontawesome';
   height: 100vh;
+position: center;
 }
 .container .cube{
-  position: center;
+  position: relative;
   left: 45%;
   top: 40%;
   height: 200px;
