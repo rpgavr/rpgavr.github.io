@@ -164,7 +164,7 @@ function jogada() {
         var resultado = document.getElementById("resultado");
 
         if (jogadaJogador === 1 || jogadaJogador === 2 || jogadaJogador === 3) {
-          resultado.innerHTML = "A ação foi " + jogadaJogador + " e falhou";
+          resultado.innerHTML = "A ação foi " + jogadaJogador + " e falhou.";
         
         } else if (jogadaJogador === 6) {
           resultado.innerHTML = "A ação foi " + jogadaJogador + " e acertou com um crítico!";
