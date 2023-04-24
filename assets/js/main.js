@@ -184,75 +184,19 @@ function jogada() {
 
       }
 
-// Classe Token para representar os tokens no mapa
-class Token {
-  constructor(x, y, size, color) {
-    this.x = x;
-    this.y = y;
-    this.size = size;
-    this.color = color;
-  }
-
-  // Desenha o token no canvas
-  draw(context) {
-    context.fillStyle = this.color;
-    context.beginPath();
-    context.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-    context.fill();
-  }
-
-  // Verifica se um ponto (x, y) está dentro do token
-  contains(x, y) {
-    return Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2)) < this.size;
-  }
-
-  // Move o token para uma nova posição (x, y)
-  move(x, y) {
-    this.x = x;
-    this.y = y;
-  }
+var mapImage = new Image();
+mapImage.onload = function() {
+    // código para desenhar o mapa no canvas
 }
+mapImage.src = 'images/eriador.jpg';
+var canvas = document.getElementById('map-canvas');
+var context = canvas.getContext('2d');
 
-// Obtém o canvas e o contexto 2D
-const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d");
-
-// Cria um token inicial
-const token = new Token(50, 50, 20, "red");
-
-// Desenha o mapa e o token no canvas
-function draw() {
-  // Desenha o mapa
-  context.fillStyle = "gray";
-  context.fillRect(0, 0, canvas.width, canvas.height);
-
-  // Desenha o token
-  token.draw(context);
-}
-
-// Atualiza a posição do token quando o narrador arrasta o mouse
-let isDragging = false;
-let dragOffsetX = 0;
-let dragOffsetY = 0;
-
-canvas.addEventListener("mousedown", function(event) {
-  if (token.contains(event.offsetX, event.offsetY)) {
-    isDragging = true;
-    dragOffsetX = event.offsetX - token.x;
-    dragOffsetY = event.offsetY - token.y;
-  }
+context.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
+$('#map-canvas').click(function(event) {
+    var token = $('#token');
+    var x = event.pageX - token.width() / 2;
+    var y = event.pageY - token.height() / 2;
+    token.animate({left: x, top: y}, 500);
 });
 
-canvas.addEventListener("mousemove", function(event) {
-  if (isDragging) {
-    token.move(event.offsetX - dragOffsetX, event.offsetY - dragOffsetY);
-    draw();
-  }
-});
-
-canvas.addEventListener("mouseup", function(event) {
-  isDragging = false;
-});
-
-// Inicia o jogo
-draw();
