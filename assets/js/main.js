@@ -256,3 +256,12 @@ canvas.addEventListener("mouseup", function(event) {
 
 // Inicia o jogo
 draw();
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+// Chama resizeCanvas quando a página é carregada e toda vez que a janela é redimensionada
+window.addEventListener('load', resizeCanvas);
+window.addEventListener('resize', resizeCanvas);
