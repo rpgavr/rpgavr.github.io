@@ -3450,7 +3450,6 @@ left: 20%;
 }
 @media (max-width: 767px) {
   .imagem-vertical {
-    width: 50%;
-  height: 50%;
+    transform: rotate(90deg);
   }
 }
