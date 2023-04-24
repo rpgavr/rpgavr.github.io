@@ -232,8 +232,9 @@ function draw() {
   // Desenha a imagem como background do canvas
   context.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
-  // Desenha o token
-  token.draw(context);
+  // Desenha o token aqui
+  context.fillStyle = "red";
+  context.fillRect(50, 50, 50, 50);
 }
 
 // Atualiza a posição do token quando o narrador arrasta o mouse
