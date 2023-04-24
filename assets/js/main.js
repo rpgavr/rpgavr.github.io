@@ -235,3 +235,7 @@ function desenhar() {
 	ctx.drawImage(img, 0, 0);
 	ctx.fillRect(token.x, token.y, 50, 50);
 }
+// Desenha o token aqui
+  context.fillStyle = "red";
+  context.fillRect(50, 50, 50, 50);
+}
