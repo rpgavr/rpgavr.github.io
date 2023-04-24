@@ -186,31 +186,31 @@ function jogada() {
 
 // Classe Token para representar os tokens no mapa
 class Token {
-constructor(x, y, size, color) {
-this.x = x;
-this.y = y;
-this.size = size;
-this.color = color;
-}
+  constructor(x, y, size, color) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.color = color;
+  }
 
-// Desenha o token no canvas
-draw(context) {
-context.fillStyle = this.color;
-context.beginPath();
-context.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-context.fill();
-}
+  // Desenha o token no canvas
+  draw(context) {
+    context.fillStyle = this.color;
+    context.beginPath();
+    context.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    context.fill();
+  }
 
-// Verifica se um ponto (x, y) está dentro do token
-contains(x, y) {
-return Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2)) < this.size;
-}
+  // Verifica se um ponto (x, y) está dentro do token
+  contains(x, y) {
+    return Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2)) < this.size;
+  }
 
-// Move o token para uma nova posição (x, y)
-move(x, y) {
-this.x = x;
-this.y = y;
-}
+  // Move o token para uma nova posição (x, y)
+  move(x, y) {
+    this.x = x;
+    this.y = y;
+  }
 }
 
 // Obtém o canvas e o contexto 2D
@@ -228,37 +228,61 @@ mapImage.src = "images/eriador.jpg";
 
 // Define a função de callback para desenhar a imagem no canvas
 mapImage.onload = function() {
-context.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
+  context.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
 
-// Desenha o token
-token.draw(context);
+  // Desenha o token
+  token.draw(context);
 }
 
-// Atualiza a posição do token quando o narrador arrasta o mouse
+// Atualiza a posição do token quando o narrador arrasta o mouse ou toca na tela
 let isDragging = false;
 let dragOffsetX = 0;
 let dragOffsetY = 0;
 
 canvas.addEventListener("mousedown", function(event) {
-if (token.contains(event.offsetX, event.offsetY)) {
-isDragging = true;
-dragOffsetX = event.offsetX - token.x;
-dragOffsetY = event.offsetY - token.y;
-}
+  if (token.contains(event.offsetX, event.offsetY)) {
+    isDragging = true;
+    dragOffsetX = event.offsetX - token.x;
+    dragOffsetY = event.offsetY - token.y;
+  }
 });
 
 canvas.addEventListener("mousemove", function(event) {
-if (isDragging) {
-token.move(event.offsetX - dragOffsetX, event.offsetY - dragOffsetY);
-context.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
-token.draw(context);
-}
+  if (isDragging) {
+    token.move(event.offsetX - dragOffsetX, event.offsetY - dragOffsetY);
+    context.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
+    token.draw(context);
+  }
 });
 
 canvas.addEventListener("mouseup", function(event) {
-isDragging = false;
+  isDragging = false;
+});
+
+canvas.addEventListener("touchstart", function(event) {
+  const touch = event.touches[0];
+  if (token.contains(touch.pageX - canvas.offsetLeft, touch.pageY - canvas.offsetTop)) {
+    isDragging = true;
+    dragOffsetX = touch.pageX - canvas.offsetLeft - token.x;
+    dragOffsetY = touch.pageY - canvas.offsetTop - token.y;
+  }
+});
+
+canvas.addEventListener("touchmove", function(event) {
+  event.preventDefault();
+  if (isDragging) {
+    const touch = event.touches[0];
+    token.move(touch.pageX - canvas.offsetLeft - dragOffsetX, touch.pageY - canvas.offsetTop - dragOffsetY);
+    context.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
+    token.draw(context);
+  }
+});
+
+canvas.addEventListener("touchend", function(event) {
+  isDragging = false;
 });
 
 // Inicia o jogo
 mapImage.src = "images/eriador.jpg"; // Define o caminho da imagem novamente para garantir que a imagem seja carregada antes de iniciar o jogo
 draw();
+
