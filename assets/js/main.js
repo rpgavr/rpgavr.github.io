@@ -184,6 +184,35 @@ function jogada() {
 
       }
 
+// Classe Token para representar os tokens no mapa
+class Token {
+constructor(x, y, size, color) {
+this.x = x;
+this.y = y;
+this.size = size;
+this.color = color;
+}
+
+// Desenha o token no canvas
+draw(context) {
+context.fillStyle = this.color;
+context.beginPath();
+context.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+context.fill();
+}
+
+// Verifica se um ponto (x, y) está dentro do token
+contains(x, y) {
+return Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2)) < this.size;
+}
+
+// Move o token para uma nova posição (x, y)
+move(x, y) {
+this.x = x;
+this.y = y;
+}
+}
+
 // Obtém o canvas e o contexto 2D
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
@@ -191,13 +220,14 @@ const context = canvas.getContext("2d");
 // Cria um token inicial
 const token = new Token(50, 50, 20, "red");
 
-// Cria um objeto Image para a imagem do mapa
+// Cria uma nova imagem
 const mapImage = new Image();
+
+// Define o caminho da imagem
 mapImage.src = "images/eriador.jpg";
 
-// Desenha o mapa e o token no canvas
-function draw() {
-// Desenha o mapa
+// Define a função de callback para desenhar a imagem no canvas
+mapImage.onload = function() {
 context.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
 
 // Desenha o token
@@ -210,23 +240,25 @@ let dragOffsetX = 0;
 let dragOffsetY = 0;
 
 canvas.addEventListener("mousedown", function(event) {
-  if (token.contains(event.offsetX, event.offsetY)) {
-    isDragging = true;
-    dragOffsetX = event.offsetX - token.x;
-    dragOffsetY = event.offsetY - token.y;
-  }
+if (token.contains(event.offsetX, event.offsetY)) {
+isDragging = true;
+dragOffsetX = event.offsetX - token.x;
+dragOffsetY = event.offsetY - token.y;
+}
 });
 
 canvas.addEventListener("mousemove", function(event) {
-  if (isDragging) {
-    token.move(event.offsetX - dragOffsetX, event.offsetY - dragOffsetY);
-    draw();
-  }
+if (isDragging) {
+token.move(event.offsetX - dragOffsetX, event.offsetY - dragOffsetY);
+context.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
+token.draw(context);
+}
 });
 
 canvas.addEventListener("mouseup", function(event) {
-  isDragging = false;
+isDragging = false;
 });
 
 // Inicia o jogo
+mapImage.src = "images/eriador.jpg"; // Define o caminho da imagem novamente para garantir que a imagem seja carregada antes de iniciar o jogo
 draw();
