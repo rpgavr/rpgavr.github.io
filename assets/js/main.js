@@ -183,3 +183,50 @@ function jogada() {
         }
 
       }
+
+// Obtém o canvas e o contexto 2D
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
+
+// Cria um token inicial
+const token = new Token(50, 50, 20, "red");
+
+// Cria um objeto Image para a imagem do mapa
+const mapImage = new Image();
+mapImage.src = "images/eriador.jpg";
+
+// Desenha o mapa e o token no canvas
+function draw() {
+// Desenha o mapa
+context.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
+
+// Desenha o token
+token.draw(context);
+}
+
+// Atualiza a posição do token quando o narrador arrasta o mouse
+let isDragging = false;
+let dragOffsetX = 0;
+let dragOffsetY = 0;
+
+canvas.addEventListener("mousedown", function(event) {
+  if (token.contains(event.offsetX, event.offsetY)) {
+    isDragging = true;
+    dragOffsetX = event.offsetX - token.x;
+    dragOffsetY = event.offsetY - token.y;
+  }
+});
+
+canvas.addEventListener("mousemove", function(event) {
+  if (isDragging) {
+    token.move(event.offsetX - dragOffsetX, event.offsetY - dragOffsetY);
+    draw();
+  }
+});
+
+canvas.addEventListener("mouseup", function(event) {
+  isDragging = false;
+});
+
+// Inicia o jogo
+draw();
