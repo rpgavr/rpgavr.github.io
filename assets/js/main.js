@@ -220,21 +220,14 @@ const context = canvas.getContext("2d");
 // Cria um token inicial
 const token = new Token(50, 50, 20, "red");
 
-const canvas = document.getElementById('canvas');
-const context = canvas.getContext('2d');
-
-// Cria uma nova imagem para o background
-const backgroundImage = new Image();
-backgroundImage.src = 'images/eriador.jpg';
-
-// Define a função para desenhar o mapa e o token
+// Desenha o mapa e o token no canvas
 function draw() {
-  // Desenha a imagem como background do canvas
-  context.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+  // Desenha o mapa
+  context.fillStyle = "gray";
+  context.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Desenha o token aqui
-  context.fillStyle = "red";
-  context.fillRect(50, 50, 50, 50);
+  // Desenha o token
+  token.draw(context);
 }
 
 // Atualiza a posição do token quando o narrador arrasta o mouse
