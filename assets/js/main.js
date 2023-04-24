@@ -183,3 +183,25 @@ function jogada() {
         }
 
       }
+let tokenPosition = {
+	x: 0,
+	y: 0
+};
+let mapa = document.getElementById("mapa");
+mapa.addEventListener("click", moverToken);
+
+function moverToken(event) {
+	// Calcula a nova posição do token com base na posição do clique
+	let novaPosicao = {
+		x: event.clientX - mapa.offsetLeft,
+		y: event.clientY - mapa.offsetTop
+	};
+
+	// Atualiza a posição do token
+	tokenPosition = novaPosicao;
+
+	// Move o token para a nova posição
+	let token = document.getElementById("token");
+	token.style.left = novaPosicao.x + "px";
+	token.style.top = novaPosicao.y + "px";
+}
