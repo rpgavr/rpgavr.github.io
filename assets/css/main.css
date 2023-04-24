@@ -3448,8 +3448,8 @@ left: 20%;
     top: 60%;
   }
 }
-@media (max-width: 767px) {
+@media (min-width: 1024px) {
   .imagem-vertical {
-    transform: rotate(90deg);
+    transform: rotate(0deg);
   }
 }
