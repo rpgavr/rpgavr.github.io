@@ -257,3 +257,18 @@ canvas.addEventListener("mouseup", function(event) {
 // Inicia o jogo
 draw();
 
+// Obtém o canvas e o contexto 2D
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
+
+// Verifica se o dispositivo é um dispositivo móvel
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+// Define o tamanho do canvas com base no dispositivo
+if (isMobile) {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+} else {
+  canvas.width = 800;
+  canvas.height = 600;
+}
