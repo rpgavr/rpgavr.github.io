@@ -184,19 +184,54 @@ function jogada() {
 
       }
 
-var mapImage = new Image();
-mapImage.onload = function() {
-    // código para desenhar o mapa no canvas
-}
-mapImage.src = 'images/eriador.jpg';
-var canvas = document.getElementById('map-canvas');
-var context = canvas.getContext('2d');
+const canvas = document.getElementById('mapa');
+const ctx = canvas.getContext('2d');
+const img = new Image();
+img.src = 'images/eriador.jpg';
+img.onload = function() {
+	ctx.drawImage(img, 0, 0);
+};
+class Token {
+	constructor(x, y) {
+		this.x = x;
+		this.y = y;
+	}
 
-context.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
-$('#map-canvas').click(function(event) {
-    var token = $('#token');
-    var x = event.pageX - token.width() / 2;
-    var y = event.pageY - token.height() / 2;
-    token.animate({left: x, top: y}, 500);
+	mover(dx, dy) {
+		this.x += dx;
+		this.y += dy;
+	}
+}
+const token = new Token(400, 300);
+
+canvas.addEventListener('mousedown', function(event) {
+	const rect = canvas.getBoundingClientRect();
+	const x = event.clientX - rect.left;
+	const y = event.clientY - rect.top;
+
+	if (x > token.x && x < token.x + 50 && y > token.y && y < token.y + 50) {
+		let offsetX = x - token.x;
+		let offsetY = y - token.y;
+
+		canvas.addEventListener('mousemove', moveToken);
+
+		function moveToken(event) {
+			const x = event.clientX - rect.left - offsetX;
+			const y = event.clientY - rect.top - offsetY;
+
+			token.x = x;
+			token.y = y;
+			desenhar();
+		}
+
+		canvas.addEventListener('mouseup', function() {
+			canvas.removeEventListener('mousemove', moveToken);
+		});
+	}
 });
 
+function desenhar() {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.drawImage(img, 0, 0);
+	ctx.fillRect(token.x, token.y, 50, 50);
+}
