@@ -3450,8 +3450,7 @@ left: 20%;
 }
 @media (max-width: 767px) {
   .imagem-vertical {
-    width: 100%;
-  height: auto;
-    object-fit: cover;
+    width: 50%;
+  height: 50%;
   }
 }
